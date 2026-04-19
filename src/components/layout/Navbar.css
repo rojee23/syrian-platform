@@ -1,0 +1,73 @@
+.custom-navbar {
+  height: 80px;
+  background: #ffffff;
+  border-bottom: 1px solid #F0F0F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  direction: rtl;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* المربع الرمادي خلف الأيقونات */
+.icon-wrapper {
+  width: 44px;
+  height: 44px;
+  background: #F8F9FA; /* اللون الرمادي الفاتح بالخلفية */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* الأيقونات نفسها - تأكدي أن اللون غامق */
+.icon-wrapper i {
+  color: #1a2b3c; 
+  font-size: 20px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 7px;
+  height: 7px;
+  background-color: #FF5B5B; /* لون النقطة الحمراء */
+  border-radius: 50%;
+  border: 1.5px solid #F8F9FA;
+}
+
+/* الخط الأسود الفاصل بين المدرب والأيقونات */
+.vertical-separator {
+  width: 1px;
+  height: 40px;
+  background-color: #D1D1D1; /* لون الخط الفاصل */
+  margin: 0 10px;
+}
+
+.user-profile-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a2b3c;
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}

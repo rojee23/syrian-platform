@@ -1,6 +1,6 @@
 import React from "react";
 import AddCoursePage from "./pages/AddCourse/AddCoursePage";
-import "./styles/global.css";
+import "./pages/AddCourse/AddCourse.css";
 
 function App() {
   return (
