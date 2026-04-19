@@ -1,25 +1,45 @@
 /* AddCourse.css - Syrian Platform Theme */
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
+/* --- الإعدادات العامة --- */
 .course-container {
   direction: rtl;
   font-family: 'Cairo', sans-serif;
   max-width: 1000px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
-/* Stepper Bar */
+.main-page-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* --- شريط الخطوات (Stepper) --- */
 .stepper-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
   position: relative;
-  max-width: 600px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  direction: ltr; /* لضمان ترتيب الدوائر من اليمين لليسار برمجياً */
+  flex-direction: row-reverse;
+}
+
+.step-line {
+  position: absolute;
+  top: 20px;
+  height: 2px;
+  background-color: #e0e0e0;
+  width: 100%;
+  z-index: 0;
 }
 
 .step-item {
@@ -27,6 +47,8 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
+  background-color: #fff;
+  padding: 0 15px;
 }
 
 .step-circle {
@@ -40,7 +62,7 @@
   align-items: center;
   color: #999;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   transition: all 0.3s ease;
 }
 
@@ -48,7 +70,7 @@
   background-color: #67cfe2;
   border-color: #67cfe2;
   color: white;
-  box-shadow: 0 0 10px rgba(103, 207, 226, 0.4);
+  box-shadow: 0 0 10px rgba(103, 207, 226, 0.3);
 }
 
 .step-item.completed .step-circle {
@@ -58,49 +80,31 @@
 }
 
 .step-label {
-  font-size: 14px;
+  font-size: 13px;
   color: #666;
+  white-space: nowrap;
 }
 
-.step-item.active .step-label {
-  color: #333;
-  font-weight: 600;
-}
-
-/* Connect Line */
-.step-line {
-  position: absolute;
-  top: 20px;
-  height: 2px;
-  background-color: #e0e0e0;
-  width: 100%;
-  z-index: 0;
-}
-
-/* Main Form Card */
+/* --- البطاقة الأساسية للفورم --- */
 .step-card {
+  background-color: #ffffff;
   border: 1px solid #f0f0f0;
   border-radius: 15px;
   padding: 40px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  min-height: 450px;
 }
 
-.step-title {
-  font-size: 24px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
+/* --- تنسيق الحقول والنصوص --- */
 .form-group {
   margin-bottom: 25px;
+  text-align: right;
 }
 
 .form-group label {
   display: block;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #444;
 }
 
@@ -110,19 +114,20 @@
   width: 100%;
   padding: 12px 15px;
   border: 1px solid #e5e5e5;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: #fcfcfc;
   font-family: inherit;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .form-group input:focus {
   border-color: #67cfe2;
   outline: none;
+  background-color: #fff;
 }
 
-/* Buttons */
-.button-footer {
+/* --- أزرار التحكم السفلية --- */
+.button-footer, .fixed-button-footer {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -134,10 +139,11 @@
   color: white;
   border: none;
   padding: 12px 60px;
-  border-radius: 25px;
-  font-weight: bold;
+  border-radius: 30px;
+  font-weight: 700;
   cursor: pointer;
   font-size: 16px;
+  transition: opacity 0.2s;
 }
 
 .btn-prev {
@@ -145,12 +151,113 @@
   color: #666;
   border: 1px solid #e0e0e0;
   padding: 12px 40px;
-  border-radius: 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-next:hover { opacity: 0.9; }
+
+/* --- تنسيقات خاصة بمراحل النجاح والانتظار (97 & 115) --- */
+.status-wrapper, .success-container {
+  max-width: 806px; /* العرض المحدد في طلبك */
+  margin: 0 auto;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px; /* الـ Gap المحدد لصفحة النجاح */
+}
+
+/* Loader الخاص بصفحة الانتظار */
+.custom-loader {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 30%, #67cfe2 100%);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 0);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 0);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* أيقونة النجاح (منزل 115) */
+.success-circle-wrapper {
+  width: 120px;
+  height: 120px;
+  background-color: #e6faf5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-check {
+  width: 70px;
+  height: 70px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 35px;
+}
+
+/* أزرار صفحة النجاح */
+.action-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-secondary {
+  background-color: #e0f7fa;
+  color: #1a2b3c;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
 }
 
-/* Responsive */
+/* تذييل صفحة التقييم */
+.feedback-section {
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- الجداول والمعاينة (منزل 95) --- */
+.quiz-preview-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.badge-count {
+  background: #f8f9fa;
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* --- الموبايل --- */
 @media (max-width: 768px) {
   .step-card { padding: 20px; }
-  .btn-next { width: 100%; }
+  .stepper-header { max-width: 100%; }
+  .btn-next, .btn-prev { width: 100%; }
+  .button-footer { flex-direction: column; }
 }
