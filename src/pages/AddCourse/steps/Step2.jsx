@@ -6,9 +6,9 @@ const Step2 = () => {
     <div className="step2-main-card">
       <h3 className="unit-title">اضافة وحدة علمية</h3>
       <button className="add-unit-button">
-        <span className="add-unit-icon-circle">+</span>
+       
         اضافة وحدة
-      </button>
+       <span className="add-unit-icon-circle">+</span></button>
     </div>
   );
 };

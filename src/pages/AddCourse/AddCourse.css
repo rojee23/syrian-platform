@@ -103,7 +103,7 @@
 /* --- المحتوى والفوتر --- */
 /* الحاوية الأساسية تصبح شفافة لتعرض البوكسات التي بداخلها فقط */
 .step-card-container {
-  width: 700px;
+  width: 755px;
   margin: 0 auto;
   background: transparent; /* الغاء الخلفية البيضاء لمنع تداخل البوكسات */
   border: none;
