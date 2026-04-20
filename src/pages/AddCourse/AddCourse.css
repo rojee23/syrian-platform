@@ -101,15 +101,14 @@
 }
 
 /* --- المحتوى والفوتر --- */
+/* الحاوية الأساسية تصبح شفافة لتعرض البوكسات التي بداخلها فقط */
 .step-card-container {
   width: 700px;
-  min-height: 450px;
   margin: 0 auto;
-  background: #ffffff;
-  border: 1px solid #F0F0F0;
-  border-radius: 15px;
-  padding: 40px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+  background: transparent; /* الغاء الخلفية البيضاء لمنع تداخل البوكسات */
+  border: none;
+  box-shadow: none;
+  padding: 0; 
 }
 
 .fixed-footer-action {

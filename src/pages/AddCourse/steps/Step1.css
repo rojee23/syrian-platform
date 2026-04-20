@@ -1,16 +1,32 @@
-/* تنسيقات عناصر الإدخال لـ Step 1 */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
-.step-content-inner {
+/* البطاقة الأساسية - بوكس واحد فقط بخصائص التصميم الكاملة */
+.step-main-card {
+  /* الأبعاد الدقيقة */
+  width: 700px;
+  height: 670px;
+  
+  /* الألوان والحدود والظلال */
+  background: #FEFEFF;
+  border-radius: 8px;
+  border-right: 6px solid #6DCDE5; /* الخط الأزرق السماوي العريض على اليمين */
+  box-shadow: 0px 0px 11px 0px #0000001A; /* الظل المطلوب لإبراز البوكس */
+  
+  /* التنسيق الداخلي والتموضع */
+  padding: 30px 40px;
+  margin: 40px auto; /* لتوسيط البطاقة في منتصف الصفحة تماماً */
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   direction: rtl;
+  box-sizing: border-box;
 }
 
+/* تنسيقات مجموعات الإدخال */
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   text-align: right;
 }
 
@@ -18,15 +34,16 @@
   font-size: 16px;
   font-weight: 700;
   color: #1a2b3c;
+  font-family: 'Cairo', sans-serif;
 }
 
 .input-hint {
   font-size: 12px;
   color: #9E9E9E;
-  margin-bottom: 4px;
+  font-family: 'Cairo', sans-serif;
 }
 
-/* الحقول النصية (اسم الدورة ووصف الدورة) */
+/* الحقول النصية والقوائم المنسدلة */
 .custom-input, 
 .custom-textarea, 
 .custom-select {
@@ -37,140 +54,52 @@
   font-family: 'Cairo', sans-serif;
   font-size: 14px;
   background-color: #ffffff;
-  transition: border-color 0.3s ease;
   outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .custom-input:focus, 
 .custom-textarea:focus, 
 .custom-select:focus {
-  border-color: #67cfe2;
+  border-color: #6DCDE5;
 }
 
-/* مربع رفع الصورة (منزل 88) */
-.upload-box-label {
-  cursor: pointer;
-  display: block;
-  width: 100%;
-}
-
+/* صندوق رفع الصورة */
 .upload-box {
   width: 100%;
   height: 120px;
-  background-color: #F8F9FA;
+  background-color: #f8fbff;
   border: 2px dashed #D9E4E5;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .upload-box:hover {
   background-color: #f0fbfc;
-  border-color: #67cfe2;
+  border-color: #6DCDE5;
 }
 
 .upload-icon {
-  width: 40px;
-  height: 40px;
-  background-color: #ACE7F1; /* اللون الأزرق السماوي الفاتح للأيقونة */
-  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  background-color: #ACE7F1; /* لون الخلفية المريح للأيقونة */
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #ffffff;
   font-size: 24px;
-  font-weight: bold;
 }
 
-/* القائمة المنسدلة */
+/* تنسيق سهم القائمة المنسدلة */
 .custom-select {
   appearance: none;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a2b3c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: left 15px center;
   background-size: 18px;
-  padding-left: 40px;
-}
-
-/* --- تنسيقات الـ Navbar (Frame 1171276563) --- */
-.custom-navbar {
-  height: 80px;
-  background: #fff;
-  border-bottom: 1px solid #F0F0F0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  direction: rtl;
-}
-
-.navbar-right, .navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.main-logo {
-  height: 40px;
-  object-fit: contain;
-}
-
-.nav-divider {
-  width: 1px;
-  height: 30px;
-  background-color: #E5E5E5;
-  margin: 0 10px;
-}
-
-.nav-link-active {
-  font-weight: 700;
-  color: #1a2b3c;
-  font-size: 16px;
-}
-
-.icon-wrapper {
-  width: 40px;
-  height: 40px;
-  background: #F8F9FA;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #1a2b3c;
-  cursor: pointer;
-  position: relative;
-}
-
-.notification-dot {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 8px;
-  height: 8px;
-  background-color: #FF5B5B;
-  border-radius: 50%;
-  border: 1px solid #fff;
-}
-
-.user-profile-nav {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-right: 20px;
-}
-
-.user-name {
-  font-weight: 600;
-  font-size: 14px;
-  color: #1a2b3c;
-}
-
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid #F0F0F0;
 }
