@@ -1,0 +1,45 @@
+/* البوكس الكبير تبع الدرس */
+.lesson-main-card {
+  width: 755px;
+  min-height: 1022px; /* الارتفاع الدقيق للدرس */
+  background: #FEFEFF;
+  border-radius: 8px;
+  border-right: 6px solid #6DCDE5;
+  box-shadow: 0px 0px 11px 0px #0000001A;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* البوكس الداخلي الملون (الكونتينر) */
+.lesson-internal-container {
+  background: #F8F9FA;
+  border: 1px solid #E5E5E5;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* تنسيق الـ Radio Buttons ليكونوا متل الصورة تماماً */
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 15px 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #6DCDE5; /* ليضوي أزرق لما تختاريه */
+}

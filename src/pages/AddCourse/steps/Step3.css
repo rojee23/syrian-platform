@@ -1,0 +1,45 @@
+.unit-main-card {
+  width: 755px; /* القياس اللي طلبتيه */
+  min-height: 450px;
+  background: #FEFEFF;
+  border-radius: 8px;
+  border-right: 6px solid #6DCDE5; /* الخط الأزرق السماوي */
+  box-shadow: 0px 0px 11px 0px #0000001A;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.unit-title-header {
+  color: #6DCDE5;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.unit-actions-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-add-lesson {
+  background: #6DCDE5;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-add-quiz {
+  background: white;
+  color: #1a2b3c;
+  border: 1px solid #E5E5E5;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}

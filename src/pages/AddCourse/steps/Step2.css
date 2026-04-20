@@ -9,14 +9,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 5px; */
   box-sizing: border-box;
+  margin-top: 20px;
 }
 
 .unit-title {
   font-size: 21px;
   font-weight: 600;
   color: #1a2b3c;
+  margin-bottom: 10px;
 }
 
 .add-unit-button {
